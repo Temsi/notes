@@ -27,4 +27,9 @@ class Tag extends Model
      */
     protected $fillable = ['tag','created_at','updated_at'];
 
+    public function notes()
+    {
+        return $this->belongsToMany('App\Models\Note', 'note_tag', 'tag_id', 'note_id');
+    }
+
 }

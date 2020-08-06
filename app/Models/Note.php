@@ -29,6 +29,6 @@ class Note extends Model
 
     public function tags()
     {
-        return $this->hasManyThrough('App\Models\Tag', 'App\Models\NoteTag', 'note_id', 'tag_id');
+        return $this->belongstoMany('App\Models\Tag', 'note_tag', 'note_id', 'tag_id');
     }
 }

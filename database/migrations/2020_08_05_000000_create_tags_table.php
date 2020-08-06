@@ -21,9 +21,9 @@ class CreateTagsTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'MyISAM';
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('tag');
+            $table->string('tag');
 
             $table->index(["tag"], 'tag');
             $table->nullableTimestamps();

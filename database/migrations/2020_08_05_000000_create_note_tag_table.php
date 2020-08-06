@@ -22,8 +22,10 @@ class CreateNoteTagTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('note_id');
+            $table->primary(['note_id', 'tag_id']);
+            $table->unsignedInteger('note_id');
             $table->unsignedInteger('tag_id');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 

@@ -16,7 +16,7 @@ class NoteTag extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'note_id';
 
     /**
      * The database table used by the model.

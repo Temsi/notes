@@ -21,7 +21,7 @@ class CreateNotesTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'MyISAM';
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('title');
             $table->text('description')->nullable()->default(null);
